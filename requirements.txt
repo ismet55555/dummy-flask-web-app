@@ -1,0 +1,13 @@
+# Basic packages
+setuptools
+wheel
+
+# Flask Stuff
+Flask
+Flask-Cors
+python-dotenv
+gevent
+
+# Formatting and Basic Tools
+coloredlogs
+requests

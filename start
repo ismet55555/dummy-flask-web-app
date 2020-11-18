@@ -1,0 +1,40 @@
+#!/bin/bash
+
+echo
+
+# Name of the app AND the current directory
+APP_NAME="dummy-flask-web-app"
+
+# Check to see if in the right base directory
+CURRENT_BASE_DIR=${PWD##*/}
+if [ $CURRENT_BASE_DIR = ${APP_NAME} ]
+then
+    # Virtual enviromnment for flask applications
+    echo "[${APP_NAME}] - Checking if virtual enviroment is setup ..."
+    if [ -d ./env ]   # Check to see if virtual enviroment exists in current working directory
+    then
+        echo "[${APP_NAME}] - Virtual environment already exists."
+        echo "[${APP_NAME}] - Activating virtual enviroment ..."
+        source env/bin/activate                      # Activate virtual enviroment
+    else
+        echo "[${APP_NAME}] - Creating a virtual environment for web application ..."
+        python3 -m venv env               # Creating the virtual environment
+        echo "[${APP_NAME}] - Activating virtual enviroment ..."
+        source env/bin/activate                      # Activate virtual enviroment
+        echo "[${APP_NAME}] - Installing all required python packages ..."
+        python3 -m pip install -r requirements.txt    # Install all required packages for virtual environment
+    fi
+
+    # Running the flask application
+    echo "[${APP_NAME}] - Starting web application ..."
+    echo
+    python3 main.py
+    echo
+    echo "[${APP_NAME}] - Web application has stopped."
+else
+    # Current directory is not correct
+    echo
+    echo "[${APP_NAME}] - CRITICAL! - Application was not able to start up!"
+    echo "[${APP_NAME}] - CRITICAL! - Shell script not executed within the correct directory."
+    echo
+fi

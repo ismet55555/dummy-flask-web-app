@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Import all local fonts -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/fonts.css') }}"
+    />
+    <!-- Materialize CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/materialize.min.css') }}"
+    />
+    <!-- Custom Style File  -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <!-- Setting page title -->
+    <title>Dummy Flask Web App</title>
+  </head>
+
+  <body>
+    <div class="container">
+     
+      <div>
+        <nav
+          class="navbar sticky navbar-expand-lg navbar-light d-flex justify-content-center z-depth-0"
+          style="background-color: #e3f2fd00;"
+        >
+          <a id="logo" class="navbar-brand" href="/index">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" height="150em" alt="TODO" />
+          </a>
+
+        </nav>
+      </div>
+
+      <hr />
+
+      {% block content %}{% endblock %}
+
+      <hr />
+
+      <div id="version">Ismet Handzic | V0.00</div>
+
+    </div>
+
+    <!-- Imported Scripts Here -->  
+    <script src="{{ url_for('static', filename='js/materialize.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/custom.js')}}"></script>
+  </body>
+</html>
