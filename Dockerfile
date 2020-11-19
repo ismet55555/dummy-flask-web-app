@@ -1,3 +1,11 @@
+# JUST SOME NOTES:
+#   - docker build -t dummy-flask-web-app .
+#   - docker run -d --rm -p 5555:5555 --name dummy-flask-app dummy-flask-web-appy
+#       -> -it for interctive output
+#       -> --rm for removing container after it stopped
+#   - docker exec -it dummy-flask-app bash
+#   - docker logs -tail 1000 dummy-flask-app
+
 # Base Image
 FROM python:3.8-slim-buster
 
@@ -5,6 +13,7 @@ FROM python:3.8-slim-buster
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     openssh-server \
+    lsof \
     vim \
     htop \
     wget \

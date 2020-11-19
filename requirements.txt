@@ -10,4 +10,4 @@ gevent
 
 # Formatting and Basic Tools
 coloredlogs
-requests
+# requests

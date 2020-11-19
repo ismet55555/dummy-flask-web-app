@@ -39,6 +39,19 @@ def index():
     return render_template("index.html", base_app_dir=base_app_dir, base_dir=base_dir)
 
 
+@api.route("/api_test_1", methods=["GET"])
+def api_test_1():
+    """
+    REST API endpoint
+    Just a GET test endpoint
+    """
+    success = True
+    message = "API test 1 endpont hit! (GET)"
+
+    logging.info(message) if success else logging.error(message)
+    return jsonify({"success": True, "message": message})
+
+
 ###############################################################################
 
 
