@@ -4,7 +4,7 @@
 # Main flask application entry point
 # Run with command: python3 main.py
 # ---------------------------------------------------------
-
+# blah
 # Import all modules for app
 import coloredlogs
 import logging
